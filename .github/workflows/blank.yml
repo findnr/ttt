@@ -37,16 +37,14 @@ jobs:
           free -m
           df -lh
           zip -r test.zip ./*
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: Create Release and Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: test.zip
-          commit: ${{ github.sha }}
-          tag_name: v1.0.0  # 请将版本号替换为您的实际版本号
-          release_name: Release v1.0.0  # 请将发布名称替换为您的实际发布名称
-          body: Release notes for v1.0.0  # 请将发布说明替换为您的实际发布说明
+          tag_name: ${{ github.ref }}
+          name: Release ${{ github.ref }}
+          body: TODO New Release.
           draft: false
           prerelease: false
-      - name: Get the release ID
-        run: echo "Release ID - ${{ steps.create_release.outputs.id }}"
+          files: |
+            text.zip
