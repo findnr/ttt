@@ -44,6 +44,10 @@ jobs:
           files: test.zip
           token: ${{ secrets.GITHUB_TOKEN }}
           commit: ${{ github.sha }}
-
+          tag_name: v1.0.0  # 请将版本号替换为您的实际版本号
+          release_name: Release v1.0.0  # 请将发布名称替换为您的实际发布名称
+          body: Release notes for v1.0.0  # 请将发布说明替换为您的实际发布说明
+          draft: false
+          prerelease: false
       - name: Get the release ID
         run: echo "Release ID - ${{ steps.create_release.outputs.id }}"
