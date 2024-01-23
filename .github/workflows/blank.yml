@@ -37,14 +37,13 @@ jobs:
           free -m
           df -lh
           zip -r test.zip ./*
-      - name: Create Release and Upload Release Asset
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          name: Release ${{ github.ref }}
-          body: TODO New Release.
-          draft: false
-          prerelease: false
-          files: |
-            test.zip
+          files: test.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit: ${{ github.sha }}
+
+      - name: Get the release ID
+        run: echo "Release ID - ${{ steps.create_release.outputs.id }}"
