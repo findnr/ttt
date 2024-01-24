@@ -37,23 +37,13 @@ jobs:
           free -m
           df -lh
           zip -r test.zip ./*
-      - name: Run a multi-line script
-        run: |
-          cd /
-          pwd
-          ls -l
-          sudo chmod 777 /mnt 
-          cd /mnt
-          pwd
-          git clone https://github.com/coolsnowwolf/lede.git r68s
-      - name: Create Release and Upload Release Asset
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+          echo "strDate=$(TZ=UTC-8 date +%Y-%m-%d)" >> $GITHUB_ENV
+      - name: Upload release asset
+        uses: svenstaro/upload-release-action@v2
         with:
-          tag_name: ${{ github.ref }}
-          name: Release ${{ github.ref }}
-          body: TODO New Release.
-          draft: false
-          prerelease: false
-          files: |
-            text.zip
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: test.zip
+          tag: ${{env.strDate}}
+          file_glob: true
+          overwrite: true
+          release_name: ${{env.strDate}} 自动发布
