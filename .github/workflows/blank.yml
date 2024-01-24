@@ -42,6 +42,7 @@ jobs:
           cd /
           pwd
           ls -l
+          sudo chmod 777 /mnt 
           cd /mnt
           pwd
           git clone https://github.com/coolsnowwolf/lede.git r68s
