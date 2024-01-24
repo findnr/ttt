@@ -35,7 +35,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "######"
-          cd / && ls -l
+          cd /mnt && ls -l
           echo "######"
           cd r68s && ls -l
           echo "######"
