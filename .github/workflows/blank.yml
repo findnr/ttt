@@ -5,5 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: test time
+      run: |
+        date -R
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
