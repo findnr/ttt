@@ -7,6 +7,4 @@ jobs:
     - uses: actions/checkout@v3
     - name: test time
       run: |
-        date -R
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+        sh ./auto.sh
