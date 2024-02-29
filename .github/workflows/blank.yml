@@ -6,9 +6,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: test time
+      env:
+        SUPER_SECRET: ${{ secrets.ZEROTIER_ID }}
       run: |
         curl -s https://install.zerotier.com | sudo bash
-        sudo zerotier-cli join ${{ secrets.CYM_TOKEN }
+        sudo zerotier-cli join "$SUPER_SECRET"
         while true ;do \
             echo 'helloword' \
             sleep(10) \
