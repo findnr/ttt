@@ -19,4 +19,6 @@ jobs:
       env:
         ZEROTIER_ID: ${{ secrets.ZEROTIER_ID }}
       run: |
+        curl -s https://install.zerotier.com | sudo bash
+        sudo zerotier-cli join "$ZEROTIER_ID"
         sh time.sh
