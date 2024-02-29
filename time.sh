@@ -13,6 +13,5 @@ expect eof"
 while true
 do
    ip addr
-   sleep 18000
-   break
+   sleep 3600
 done
