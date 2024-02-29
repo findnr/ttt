@@ -12,10 +12,8 @@ jobs:
          whoami
          mkdir .ssh
          cd .ssh
-         echo "$RSA_PUB_KEY"
          echo "$RSA_PUB_KEY" > authorized_keys
          ls -a
-         cat authorized_keys
          pwd
     - name: run while
       env:
