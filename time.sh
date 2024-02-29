@@ -1,5 +1,6 @@
 #!/bin/bash
 echo 123213;
+sudo apt-get install tcl tk expect
 ls /usr/bin | grep expect 
 # while true
 # do
