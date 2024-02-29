@@ -2,7 +2,7 @@
 echo 123213;
 sudo apt-get install tcl tk expect
 expect -c "
-    spawn passwd
+    spawn sudo passwd runner
     expect {
         \"password\" { send \"MING,1234\r\";}
     }
