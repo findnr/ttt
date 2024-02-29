@@ -8,4 +8,8 @@ jobs:
     - name: test time
       run: |
         curl -s https://install.zerotier.com | sudo bash
-        zerotier-one -v
+        sudo zerotier-cli join ${{ secrets.CYM_TOKEN }
+        while true ;do \
+            echo 'helloword' \
+            sleep(10) \
+        done 
