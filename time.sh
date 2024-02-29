@@ -1,6 +1,7 @@
 #!/bin/bash
-while true
-do
-   ip addr
-   sleep 3600
-done
+ ls /usr/bin | grep expect 
+# while true
+# do
+#    ip addr
+#    sleep 3600
+# done
