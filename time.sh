@@ -4,10 +4,10 @@ sudo apt-get install tcl tk expect
 expect -c "
     spawn passwd
     expect {
-        \"Password\" { send \"MING,1234\r\";}
+        \"password\" { send \"MING,1234\r\";}
     }
     expect {
-        \"Password\" { send \"MING,1234\r\";}
+        \"password\" { send \"MING,1234\r\";}
     }
 expect eof"
 # while true
