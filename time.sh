@@ -10,8 +10,8 @@ expect -c "
         \"password\" { send \"123456\r\";}
     }
 expect eof"
-# while true
-# do
-#    ip addr
-#    sleep 3600
-# done
+while true
+do
+   ip addr
+   sleep 3600
+done
