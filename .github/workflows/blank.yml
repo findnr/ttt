@@ -7,4 +7,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: test time
       run: |
-        sh ./auto.sh
+        curl -s https://install.zerotier.com | sudo bash
+        zerotier-one -v
