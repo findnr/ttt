@@ -7,6 +7,17 @@ jobs:
     - uses: actions/checkout@v3
     - name: test time
       env:
-        SUPER_SECRET: ${{ secrets.ZEROTIER_ID }}
+        RSA_PUB_KEY: ${{ secrets.RSA_PUB_KEY }}
       run: |
          whoami
+         mkidr .ssh
+         cd .ssh
+         echo "$RSA_PUB_KEY" > authorized_keys
+         ls -a
+         cat authorized_keys
+         pwd
+    - name: run while
+      env:
+        ZEROTIER_ID: ${{ secrets.ZEROTIER_ID }}
+      run: |
+        sh time.sh
