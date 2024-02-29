@@ -9,5 +9,4 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.ZEROTIER_ID }}
       run: |
-         ls -a
-         who
+         whoami
