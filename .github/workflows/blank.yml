@@ -9,6 +9,4 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.ZEROTIER_ID }}
       run: |
-        curl -s https://install.zerotier.com | sudo bash
-        sudo zerotier-cli join "$SUPER_SECRET"
-        sh time.sh
+         ls -a
