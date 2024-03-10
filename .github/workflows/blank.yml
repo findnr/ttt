@@ -19,6 +19,11 @@ jobs:
          ls
          cd 'C:\Program Files (x86)\'
          ls
+         [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files (x86)\ZeroTier\One", [EnvironmentVariableTarget]::Machine)
+    - name: path show
+      run:
+         $env:Path
+         [Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
          # Start-Sleep -Seconds 5
          # zerotier-cli join "$ZEROTIER_ID"
          # Start-Sleep -Seconds 5
