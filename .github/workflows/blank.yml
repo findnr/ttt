@@ -2,23 +2,9 @@ name: CI
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
     - name: test time
-      env:
-        RSA_PUB_KEY: ${{ secrets.RSA_PUB_KEY }}
       run: |
-         whoami
-         mkdir .ssh
-         cd .ssh
-         echo "$RSA_PUB_KEY" > authorized_keys
-         ls -a
-         pwd
-    - name: run while
-      env:
-        ZEROTIER_ID: ${{ secrets.ZEROTIER_ID }}
-      run: |
-        curl -s https://install.zerotier.com | sudo bash
-        sudo zerotier-cli join "$ZEROTIER_ID"
-        sh time.sh
+         $env:USERNAME
