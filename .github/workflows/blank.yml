@@ -27,6 +27,5 @@ jobs:
          # Start-Sleep -Seconds 5
          # ./zerotier-cli info
          # ipconfig
-         $currentUsername = $env:USERNAME
-         Set-LocalUser -Name $currentUsername -Password 'a1'
+         Set-LocalUser -Name 'runneradmin' -Password 'a1'
          # Start-Sleep -Seconds 3600
