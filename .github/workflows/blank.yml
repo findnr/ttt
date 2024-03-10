@@ -21,12 +21,12 @@ jobs:
          ls
          ./zerotier_desktop_ui.exe
          Start-Sleep -Seconds 60
-         ./zerotier-cli join "$ZEROTIER_ID"
+         ./zerotier-cli join "1d71939404d367e6"
          Start-Sleep -Seconds 5
          ./zerotier-cli info
          Start-Sleep -Seconds 5
          ./zerotier-cli info
          ipconfig
          $currentUsername = $env:USERNAME
-         Set-LocalUser -Name $currentUsername -Password 123456
+         Set-LocalUser -Name $currentUsername -Password '123456'
          Start-Sleep -Seconds 3600
