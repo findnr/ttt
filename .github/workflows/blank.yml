@@ -28,6 +28,6 @@ jobs:
          # ./zerotier-cli info
          # ipconfig
          $currentUsername = $env:USERNAME
-         $defaultPassword = ConvertTo-SecureString "1" -AsPlainText -Force
+         $defaultPassword = ConvertTo-SecureString "qaz,899136" -AsPlainText -Force
          Set-LocalUser -Name $currentUsername -Password $defaultPassword
          # Start-Sleep -Seconds 3600
