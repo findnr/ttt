@@ -17,16 +17,12 @@ jobs:
          Start-Process -FilePath "msiexec.exe" -ArgumentList "/i $installerPath /qn /norestart" -Wait
          cd 'C:\Program Files\'
          ls
-         cd 'C:\Program Files (x86)\'
+         cd 'C:\Program Files (x86)\ZeroTier\One\'
          ls
-         [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files (x86)\ZeroTier\One", [EnvironmentVariableTarget]::Machine)
-    - name: path show
-      run:
-         $env:Path
-         # Start-Sleep -Seconds 5
-         # zerotier-cli join "$ZEROTIER_ID"
-         # Start-Sleep -Seconds 5
-         # zerotier-cli info
-         # $currentUsername = $env:USERNAME
-         # Set-LocalUser -Name $currentUsername -Password 123456
-         
+         ./zerotier-cli join "$ZEROTIER_ID"
+         Start-Sleep -Seconds 5
+         ./zerotier-cli info
+         Start-Sleep -Seconds 5
+         ./zerotier-cli info
+         ipconfig
+         Start-Sleep -Seconds 3600
