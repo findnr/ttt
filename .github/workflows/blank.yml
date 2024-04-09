@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
 jobs:
   task-1:
-    uses: ${{ github.repository }}/.github/workflows/task.yml@main
+    uses: ./.github/workflows/task.yml
   task-2:
     needs: task-1
-    uses: ${{ github.repository }}/.github/workflows/task.yml@main
+    uses: ./.github/workflows/task.yml
   task-3:
     needs: task-2
-    uses: ${{ github.repository }}/.github/workflows/task.yml@main
+    uses: ./.github/workflows/task.yml
